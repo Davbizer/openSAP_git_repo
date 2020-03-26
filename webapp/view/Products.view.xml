@@ -1,0 +1,24 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sapui5.app1.db.newApp1_DB.controller.Products"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Title" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<List items="{/Products}" headerText="Products">
+						<ObjectListItem title="{ProductName}" type="Active" press="onPressListItem"
+			number="{
+				parts:[{path:'UnitPrice'},{path:'i18n>currencyEUR'}],
+				type: 'sap.ui.model.type.Currency',
+				formatOptions: {showMeasure: false}
+			}"
+			numberUnit="{i18n>currencyEUR}" 
+			numberState="{=  ${Discontinued} === false || ${UnitsInStock} > 0  ? 'Success' : 'Error' }">
+							<ObjectAttribute text="Discontinued: {Discontinued}"/>
+							<ObjectAttribute text="Units in Stock: {UnitsInStock}" />
+						</ObjectListItem>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

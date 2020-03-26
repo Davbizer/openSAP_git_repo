@@ -1,0 +1,51 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="sapui5.app1.db.newApp1_DB.controller.ProductDetails">
+	<App>
+		<pages>
+			<Page title="Title" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<VBox >
+						<f:Form editable="true" id="form1">
+							<f:title>
+								<core:Title text="Details of the Product"/>
+							</f:title>
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"
+									emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer title="Product name: {ProductName}" id="container3">
+									<f:formElements>
+										<f:FormElement label="Quantity per unit" id="element0">
+											<f:fields>
+												<Input width="100%" id="input0" editable="false" value="{path: 'QuantityPerUnit',formatter: '.formatter.showMulitplicatorSign'}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Units in stock" id="element3">
+											<f:fields>
+												<Input width="100%" id="input4" editable="false" value="{path: 'UnitsInStock'}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Units on" id="element5">
+											<f:fields>
+												<Input width="100%" id="input5" editable="false" value="{UnitsOnOrder}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Supplier Name" id="element4">
+											<f:fields>
+												<Input width="100%" id="input3" editable="false" value="{Supplier/CompanyName}"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+							<f:layout>
+								<f:ResponsiveGridLayout id="layout1"/>
+							</f:layout>
+						</f:Form>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

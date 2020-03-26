@@ -1,0 +1,20 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" controllerName="sapui5.app1.db.newApp1_DB.controller.App" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n&gt;title}">
+					<content>
+						<l:VerticalLayout xmlns:sap.ui.layout="sap.ui.layout" width="100%" id="layout0">
+							<l:content>
+								<Button xmlns="sap.m" text="{i18n&gt;button0}" id="button0" press="navigate" icon="sap-icon://product" iconFirst="false"/>
+								<Button xmlns="sap.m" text="{i18n&gt;dialogjs}" id="button1" press="onShowDialog" icon="sap-icon://popup-window" iconFirst="false"/>
+								<Button xmlns="sap.m" text="{i18n&gt;dialogfragment}" id="button2" press="onOpenDialogXML" icon="sap-icon://popup-window" iconFirst="false"/>
+								<Button xmlns="sap.m" text="{i18n&gt;button2}" id="button3" icon="sap-icon://legend" iconFirst="false"/>
+					</l:content>
+						</l:VerticalLayout>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

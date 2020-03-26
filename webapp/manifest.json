@@ -1,0 +1,136 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sapui5.app1.db.newApp1_DB",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"crossNavigation": {
+			"inbounds": {}
+		},
+		"dataSources": {
+			"Northwind.svc": {
+				"uri": "/northwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "sapui5.app1.db.newApp1_DB.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "App"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sapui5.app1.db.newApp1_DB.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "Northwind.svc",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "sapui5.app1.db.newApp1_DB.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "home",
+				"target": "home"
+			}, {
+				"name": "Products",
+				"pattern": "Products",
+				"target": [
+					"Products"
+				]
+			}, {
+				"name": "ProductDetail",
+				"pattern": "Products/{productID}",
+				"target": [
+					"ProductDetail"
+				]
+			}],
+			"targets": {
+				"home": {
+					"viewType": "XML",
+					"transition": "fade",
+					"clearControlAggregation": false,
+					"viewName": "App",
+					"viewLevel": 1
+				},
+				"Products": {
+					"viewType": "XML",
+					"viewName": "Products",
+					"viewLevel": 2
+				},
+				"ProductDetail": {
+					"viewType": "XML",
+					"viewName": "ProductDetails",
+					"viewLevel": 3
+				}
+			}
+		}
+	}
+}
